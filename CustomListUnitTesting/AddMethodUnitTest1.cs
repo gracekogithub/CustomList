@@ -18,7 +18,7 @@ namespace CustomListUnitTesting
             int actualResult;
 
             //Act
-            listOfNumbers1.Add(number);
+            listOfNumbers1.AddMyItem(number);
             actualResult = listOfNumbers1.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -33,7 +33,7 @@ namespace CustomListUnitTesting
             int expectedResult = 2;
             int actualResult;
             //Act
-            listOfNumbers2.Add(number);
+            listOfNumbers2.AddMyItem(number);
             actualResult = listOfNumbers2.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -47,7 +47,7 @@ namespace CustomListUnitTesting
             string expectedResult = "soccer ball";
             string actualResult;
             //Act
-            listOfString.Add(item);
+            listOfString.AddMyItem(item);
             actualResult = listOfString.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -60,7 +60,7 @@ namespace CustomListUnitTesting
             string expectedResult = "baseball";
             string actualResult;
             //Act
-            listOfItem.Add(item2);
+            listOfItem.AddMyItem(item2);
             actualResult = listOfItem.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -73,7 +73,7 @@ namespace CustomListUnitTesting
             double expectedResult = 2.50;
             string actualResult;
             //Act
-            dollarAmount.Add(amount);
+            dollarAmount.AddMyItem(amount);
             actualResult = dollarAmount.count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
