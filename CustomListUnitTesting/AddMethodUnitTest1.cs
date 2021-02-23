@@ -29,11 +29,11 @@ namespace CustomListUnitTesting
         {
             //Arange
             CustomList<int> listOfNumbers2 = new CustomList<int>();
-            int number = 5;
+            int numberOfCapacity = 5;
             int expectedResult = 10;
             int actualResult;
             //Act
-            listOfNumbers2.AddMyItem(number);
+            listOfNumbers2.AddMyItem(numberOfCapacity);
             actualResult = listOfNumbers2.Capacity;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -48,7 +48,7 @@ namespace CustomListUnitTesting
             string actualResult;
             //Act
             listOfString1.AddMyItem(item);
-            actualResult = listOfString1.Count();
+            actualResult = listOfString1.Capacity("soccer ball", listOfString1.Count+1);
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -56,29 +56,31 @@ namespace CustomListUnitTesting
         public void Add_String_Increases_Two()
         {
             //Arrange
-            CustomList <string> listOfString2= new CustomList<string>();
+            CustomList<string> listOfString2 = new CustomList<string>();
+            string item1 = "soccer ball";
             string item2 = "baseball";
-            string expectedResult = "baseball";
+            string expectedResult = item1 +item2;
             string actualResult;
             //Act
-            listOfString2.AddMyItem(item2);
-            actualResult = listOfString2.Capacity;
+            listOfString2.AddMyItem(item1 + item2);
+            actualResult = listOfString2.Count(item1+item2);
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
-        public void Add_Double_Increases_ByDecimal()
+        public void Add_ItemsValue()
         {
             //Arrange
-            CustomList<double> dollarAmount = new CustomList<double>();
-            double amount = 10;
-            double expectedResult = 2.50;
-            string actualResult;
+            CustomList<double> listOfValue = new CustomList<double>();
+            
+            double expectedResult=10.5;
+            double actualResult;
             //Act
-            dollarAmount.AddMyItem(amount);
-            actualResult = dollarAmount.Capacity;
+            actualResult = listOfValue.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
+
+
         }
     }
 }

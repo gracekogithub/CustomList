@@ -11,6 +11,13 @@ namespace CustomListNew
         //private T[] _price;
         //private T[] _sportsBalls;
         private T[] _items;
+        public T[] Items
+        {
+            get
+            {
+                return _items;
+            }
+        }
         private int count;
         public int Count 
         {
@@ -52,13 +59,13 @@ namespace CustomListNew
             }
             
         }
-        public void ResizeCapacity(T size)
-        {
-            if (true)
-            {
+        //public void ResizeCapacity(T size)
+        //{
+        //    if (true)
+        //    {
 
-            }
-        }
+        //    }
+        //}
         //public void AddString(T stringToAdd)
         //{
             
