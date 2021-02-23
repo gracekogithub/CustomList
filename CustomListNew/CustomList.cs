@@ -8,7 +8,8 @@ namespace CustomListNew
 {
     public class CustomList<T>
     {
-        private T[] _sportsBalls;
+        //private T[] _price;
+        //private T[] _sportsBalls;
         private T[] _items;
         private int count;
         public int Count 
@@ -33,25 +34,45 @@ namespace CustomListNew
             count = 0;
             capacity = 4;
             _items = new T[capacity];
-            _sportsBalls = new T[capacity];
+            //_sportsBalls = new T[capacity];
+            //_price = new T[capacity];
+
         }
         public void AddMyItem (T numberToAdd)
         {
             if (count == capacity)
             {
 
+                Array.Resize<T>(ref _items, _items.Length +1);
             }
-            _items[count] = numberToAdd;
-            count++;
+            else 
+            {
+                _items[count] = numberToAdd;
+                count++;
+            }
+            
         }
-        public void AddString (T stringToAdd)
+        public void ResizeCapacity(T size)
         {
-            _sportsBalls[count] = stringToAdd;
+            if (true)
+            {
+
+            }
         }
-        public void RemoveMyNumber (T numberToRemove)
-        {
-            _items[count] = numberToRemove;
-            count--;
-        }
+        //public void AddString(T stringToAdd)
+        //{
+            
+        //    _sportsBalls[count] = stringToAdd;
+         
+        //}
+        //public void AddPriceOfItem (T doubleToAdd)
+        //{
+        //    _price[count] = doubleToAdd;
+        //}
+        //public void RemoveMyNumber (T numberToRemove)
+        //{
+        //    _items[count] = numberToRemove;
+        //    count--;
+        //}
     }
 }
