@@ -29,58 +29,67 @@ namespace CustomListUnitTesting
         {
             //Arange
             CustomList<int> listOfNumbers2 = new CustomList<int>();
-            int numberOfCapacity = 5;
-            int expectedResult = 10;
+            int number1 = 5;
+            int number2 = 10;
+            int expectedResult = 4;
             int actualResult;
             //Act
-            listOfNumbers2.AddMyItem(numberOfCapacity);
+            listOfNumbers2.AddMyItem(number1+number2);
             actualResult = listOfNumbers2.Capacity;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+        
         [TestMethod]
         public void Add_String_Increases_One()
         {
             //Arange
             CustomList<string> listOfString1 = new CustomList<string>();
             string item = "soccer ball";
-            string expectedResult = "soccer ball";
-            string actualResult;
+            int expectedResult = 4;
+            int actualResult;
             //Act
             listOfString1.AddMyItem(item);
-            actualResult = listOfString1.Capacity("soccer ball", listOfString1.Count+1);
+            actualResult = listOfString1.Capacity;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+        
         [TestMethod]
-        public void Add_String_Increases_Two()
+        public void Add_String_Increases_Five()
         {
             //Arrange
             CustomList<string> listOfString2 = new CustomList<string>();
             string item1 = "soccer ball";
             string item2 = "baseball";
-            string expectedResult = item1 +item2;
-            string actualResult;
+            string item3 = "tennis ball";
+            string item4 = "tennis racket";
+            string item5 = "golf ball";
+            int expectedResult = 8;
+            int actualResult;
             //Act
-            listOfString2.AddMyItem(item1 + item2);
-            actualResult = listOfString2.Count(item1+item2);
+            listOfString2.AddMyItem(item1 + item2 + item3 + item4 + item5);
+            actualResult = listOfString2.Capacity;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
         public void Add_ItemsValue()
         {
-            //Arrange
-            CustomList<double> listOfValue = new CustomList<double>();
-            
-            double expectedResult=10.5;
-            double actualResult;
+            CustomList<string> listOfString3 = new CustomList<string>();
+            string item1 = "soccer ball";
+            string item2 = "baseball";
+            string item3 = "tennis ball";
+            string item4 = "tennis racket";
+            string item5 = "golf ball";
+            int expectedResult = 5;
+            int actualResult;
             //Act
-            actualResult = listOfValue.Count;
+            listOfString3.AddMyItem(item1 + item2 + item3 + item4 + item5);
+            actualResult = listOfString3.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
-
-
         }
+        
     }
 }
