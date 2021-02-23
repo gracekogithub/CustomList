@@ -10,12 +10,16 @@ namespace CustomListNew
     {
         //private T[] _price;
         //private T[] _sportsBalls;
-        private T[] _items;
-        public T[] Items
+        private T[] _items = new T[4];
+        public T this[int i]
         {
             get
             {
-                return _items;
+                return _items[i];
+            }
+            set
+            {
+                _items[i] = value;
             }
         }
         private int count;
@@ -33,6 +37,10 @@ namespace CustomListNew
             {
                 return capacity;
             }
+            set
+            {
+                capacity = value;
+            }
         }
         
         
@@ -41,16 +49,15 @@ namespace CustomListNew
             count = 0;
             capacity = 4;
             _items = new T[capacity];
-            //_sportsBalls = new T[capacity];
-            //_price = new T[capacity];
-
+            //Array.Resize<T>(ref _items, 4);
+            
         }
         public void AddMyItem (T numberToAdd)
         {
             if (count == capacity)
             {
-
-                Array.Resize<T>(ref _items, _items.Length +1);
+                Array.Resize(ref _items, count + 4);
+               
             }
             else 
             {
@@ -59,27 +66,6 @@ namespace CustomListNew
             }
             
         }
-        //public void ResizeCapacity(T size)
-        //{
-        //    if (true)
-        //    {
-
-        //    }
-        //}
-        //public void AddString(T stringToAdd)
-        //{
-            
-        //    _sportsBalls[count] = stringToAdd;
-         
-        //}
-        //public void AddPriceOfItem (T doubleToAdd)
-        //{
-        //    _price[count] = doubleToAdd;
-        //}
-        //public void RemoveMyNumber (T numberToRemove)
-        //{
-        //    _items[count] = numberToRemove;
-        //    count--;
-        //}
+       
     }
 }
