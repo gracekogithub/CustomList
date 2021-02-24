@@ -8,9 +8,9 @@ namespace CustomListNew
 {
     public class CustomList<T>
     {
-        //private T[] _price;
-        //private T[] _sportsBalls;
         private T[] _items = new T[4];
+        public T[] Items { get { return _items; } }
+
         public T this[int i]
         {
             get
@@ -40,6 +40,8 @@ namespace CustomListNew
             set
             {
                 capacity = value;
+                
+               
             }
         }
         
@@ -49,22 +51,19 @@ namespace CustomListNew
             count = 0;
             capacity = 4;
             _items = new T[capacity];
-            //Array.Resize<T>(ref _items, 4);
+           
             
         }
-        public void AddMyItem (T numberToAdd)
+        public void AddMyItem (T itemToAdd)
         {
             if (count == capacity)
             {
-                Array.Resize(ref _items, count + 4);
-               
+                //Array.Resize<T>(ref _items, _items.Length);
+                T[] moreItems = new T[_items.Length * 2];
+                Array.Copy(_items, moreItems, _items.Length);
+                _items = moreItems;
             }
-            else 
-            {
-                _items[count] = numberToAdd;
-                count++;
-            }
-            
+            _items[count++] = itemToAdd;
         }
        
     }
