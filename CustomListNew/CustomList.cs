@@ -50,11 +50,11 @@ namespace CustomListNew
         {
             count = 0;
             capacity = 4;
-            _items = new T[capacity];
+            _items = new T[_items.Length];
            
             
         }
-        public void AddMyItem (T itemToAdd)
+        public void AddMyItem (T itemAdded)
         {
             if (count == capacity)
             {
@@ -62,8 +62,9 @@ namespace CustomListNew
                 T[] moreItems = new T[_items.Length * 2];
                 Array.Copy(_items, moreItems, _items.Length);
                 _items = moreItems;
+                _items[count++] = itemAdded;
             }
-            _items[count++] = itemToAdd;
+            _items[count++] = itemAdded;
         }
        
     }
