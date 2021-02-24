@@ -30,28 +30,51 @@ namespace RemoveUnitTest
             string name1 = "tennis ball";
             string name2 = "golf ball";
             string name3 = "soccer ball";
-            string expectedResult = "tennis ball" + "golf ball";
-            string actualResult;
+            int expectedResult = 2;
+            int actualResult;
             //Act
             names.RemoveItem(name1);
             names.RemoveItem(name2);
-            actualResult = Convert.ToInt32(names.Count);
+            actualResult = names.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
-        public void Remove_Capacity_Decrease_ByOne()
+        public void Remove_CapacityString_Decrease_ByThree()
         {
             //Arrange
-            CustomList<int> numberCap = new CustomList<int>();
-            int numberCap1 = 11;
-            int expectedResult = 4;
+            CustomList<string> removeNames = new CustomList<string>();
+            string name1 = "tennis ball";
+            string name2 = "golf ball";
+            string name3 = "soccer ball";
+            int expectedResult = 0;
             int actualResult;
             //Act
-            numberCap.RemoveItem(numberCap1);
-            actualResult = numberCap.Capacity;
+            removeNames.RemoveItem(name1);
+            removeNames.RemoveItem(name2);
+            removeNames.RemoveItem(name3);
+            actualResult = removeNames.Capacity;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+        [TestMethod]
+        public void Remove_OneItem_FromFive()
+        {
+            //Arrange
+            CustomList<int> item = new CustomList<int>();
+            int item1 = 11;
+            int item2 = 15;
+            int item3 = 20;
+            string item4 = "tennis ball";
+            string item5 = "golf ball";
+            int expectedResult = 30;
+            int actualResult;
+            //Act
+            item.RemoveItem(item3);
+            actualResult = item[2];
+            //Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+       
     }
 }

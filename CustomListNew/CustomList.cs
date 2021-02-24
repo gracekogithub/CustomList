@@ -50,7 +50,7 @@ namespace CustomListNew
         {
             count = 0;
             capacity = 4;
-            _items = new T[_items.Length];
+            _items = new T[capacity];
            
             
         }
