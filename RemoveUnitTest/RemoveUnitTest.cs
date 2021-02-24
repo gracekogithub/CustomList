@@ -23,17 +23,21 @@ namespace RemoveUnitTest
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
-        //public void Remove_CountString_Decrease_ByTwo()
-        //{
-        //    //Arrange
-        //    CustomList<string> names = new CustomList<string>();
-        //    string name1 = "tennis ball";
-        //    string name2 = "golf ball";
-        //    string name3 = "soccer ball";
-            
+        public void Remove_CountString_Decrease_ByTwo()
+        {
+            //Arrange
+            CustomList<string> names = new CustomList<string>();
+            string name1 = "tennis ball";
+            string name2 = "golf ball";
+            string name3 = "soccer ball";
+            string expectedResult = "tennis ball" + "golf ball";
+            string actualResult;
             //Act
-
+            names.RemoveItem(name1);
+            names.RemoveItem(name2);
+            actualResult = Convert.ToInt32(names.Count);
             //Assert
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
