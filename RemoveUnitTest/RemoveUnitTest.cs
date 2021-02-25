@@ -15,7 +15,11 @@ namespace RemoveUnitTest
             int number = 10;
             int expectedResult = 0;
             int actualResult;
+
+
             //Act
+            items.AddMyItem(number);
+
             items.RemoveItem(number);
             actualResult = items.Count;
 
@@ -30,9 +34,12 @@ namespace RemoveUnitTest
             string name1 = "tennis ball";
             string name2 = "golf ball";
             string name3 = "soccer ball";
-            int expectedResult = 2;
+            int expectedResult = 1;
             int actualResult;
             //Act
+            names.AddMyItem(name1);
+            names.AddMyItem(name2);
+            names.AddMyItem(name3);
             names.RemoveItem(name1);
             names.RemoveItem(name2);
             actualResult = names.Count;
@@ -43,16 +50,19 @@ namespace RemoveUnitTest
         public void Remove_CapacityString_Decrease_ByThree()
         {
             //Arrange
-            CustomList<string> removeNames = new CustomList<string>();
+            CustomList<string> reNames = new CustomList<string>();
             string name1 = "tennis ball";
             string name2 = "golf ball";
             string name3 = "soccer ball";
-            int expectedResult = 0;
+            int expectedResult = 4;
             int actualResult;
             //Act
-            removeNames.RemoveItem(name1);
-            removeNames.RemoveItem(name2);
-            removeNames.RemoveItem(name3);
+            reNames.AddMyItem(name1);
+            reNames.AddMyItem(name2);
+            reNames.AddMyItem(name3);
+            reNames.RemoveItem(name1);
+            reNames.RemoveItem(name2);
+            reNames.RemoveItem(name3);
             actualResult = removeNames.Capacity;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -65,13 +75,15 @@ namespace RemoveUnitTest
             int item1 = 11;
             int item2 = 15;
             int item3 = 20;
-            string item4 = "tennis ball";
-            string item5 = "golf ball";
-            int expectedResult = 30;
+           
+            int expectedResult = 15;
             int actualResult;
             //Act
+            item.AddMyItem(item1);
+            item.AddMyItem(item2);
+            item.AddMyItem(item3);
             item.RemoveItem(item3);
-            actualResult = item[2];
+            actualResult = item[1];
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }

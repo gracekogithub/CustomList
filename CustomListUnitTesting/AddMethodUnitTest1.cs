@@ -12,13 +12,13 @@ namespace CustomListUnitTesting
         public void Add_CountIncreases_ByOne()
         {
             //Arange
-            CustomList<int> listOfNumbers1 = new CustomList<int>();
+            CustomList<int> listOfNumbers1 = new CustomList<int>();  //empty list[      ]
             int number = 9;
             int expectedResult = 1;
             int actualResult;
 
             //Act
-            listOfNumbers1.AddMyItem(number);
+            listOfNumbers1.AddMyItem(number);  //list with one value     [9 , , , ]
             actualResult = listOfNumbers1.Count;
             //Assert
             Assert.AreEqual(expectedResult, actualResult);

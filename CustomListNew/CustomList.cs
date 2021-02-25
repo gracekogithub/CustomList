@@ -10,8 +10,6 @@ namespace CustomListNew
     public class CustomList<T>
     {
         private T[] _items = new T[4];
-        public T[] Items { get { return _items; } }
-
         public T this[int i]
         {
             get
@@ -47,6 +45,7 @@ namespace CustomListNew
         }
         
         
+        
         public CustomList()
         {
             count = 0;
@@ -57,44 +56,46 @@ namespace CustomListNew
         }
         public void AddMyItem (T itemAdded)
         {
+          
             if (count == capacity)
             {
                 capacity *= 2;
-                //Array.Resize<T>(ref _items, _items.Length);
+
+                //Array.Resize<T>(ref _items, _items.Length); or like the following
                 T[] moreItems = new T[capacity];
-                Array.Copy(_items, moreItems, _items.Length);
+                //create logic to take the place of Array.copy
+                for (int i = 0; i < count; i++)
+                {
+                    moreItems[i] = _items[i];
+                }
+               
+
                 _items = moreItems;
-                _items[count++] = itemAdded;
-            }
-            _items[count++] = itemAdded;
-        }
-        public void RemoveItem (T createdItem)
-        {
-            for (int count = 0; count < 4 ; count--)
-            {
-                _items[count] = _items[count-1];
-                if (true)
-                {
-
-                }
-                else
-                {
-
-                }
                 
             }
+            _items[count] = itemAdded;
+            count++;
         }
+        //public void RemoveItem ()
+        //{
+        //    int position;
+        //    for (int i = 0; i < _items.Length; i++)
+        //    {
+        //        if (position)
+        //        {
 
-        //Don't Remove, but create new collection without item being removed
-        public void ReadFile()
-        {
-            string path = @"Mac\Home\Desktop\DevCode\CustomListNew\TestFile.txt";
-            if (!File.Exists(path))
-            {
-                Console.WriteLine("Error: File does not exist");
-            }
+        //        }
+        //    }
+        //}
 
-        }
-
+        ////Don't Remove, but create new collection without item being removed
+        //public void ReadFile()
+        //{
+        //    string path = @"Mac\Home\Desktop\DevCode\CustomListNew\TestFile.txt";
+        //    if (!File.Exists(path))
+        //    {
+        //        Console.WriteLine("Error: File does not exist");
+        //    }
+        //}
     }
 }
