@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CustomListNew
 {
@@ -58,14 +59,42 @@ namespace CustomListNew
         {
             if (count == capacity)
             {
+                capacity *= 2;
                 //Array.Resize<T>(ref _items, _items.Length);
-                T[] moreItems = new T[_items.Length * 2];
+                T[] moreItems = new T[capacity];
                 Array.Copy(_items, moreItems, _items.Length);
                 _items = moreItems;
                 _items[count++] = itemAdded;
             }
             _items[count++] = itemAdded;
         }
-       
+        public void RemoveItem (T createdItem)
+        {
+            for (int count = 0; count < 4 ; count--)
+            {
+                _items[count] = _items[count-1];
+                if (true)
+                {
+
+                }
+                else
+                {
+
+                }
+                
+            }
+        }
+
+        //Don't Remove, but create new collection without item being removed
+        public void ReadFile()
+        {
+            string path = @"Mac\Home\Desktop\DevCode\CustomListNew\TestFile.txt";
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("Error: File does not exist");
+            }
+
+        }
+
     }
 }
