@@ -83,7 +83,14 @@ namespace CustomListNew
             _items[count] = myItems;
             count--;
         }
-        //Don't Remove, but create new collection without item being removed
+        public void ToStringMethodTest(T number)
+        {
+            for (int i = 0; i < count; i++)
+            {
+            }
+            
+            
+        }
         public void ReadFile()
         {
             string path = @"Mac\Home\Desktop\DevCode\CustomListNew\TestFile.txt";
