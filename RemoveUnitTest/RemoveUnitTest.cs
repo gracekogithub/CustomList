@@ -83,25 +83,25 @@ namespace RemoveUnitTest
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestMethod]
-        public void Remove_all()
-        {
-            //Arrange
-            CustomList<int> item = new CustomList<int>();
-            int item1 = 11;
-            int item2 = 15;
-            int item3 = 20;
-            int expectedResult = 20;
-            int actualResult;
-            //Act
-            item.AddMyItem(item1);
-            item.AddMyItem(item2);
-            item.AddMyItem(item3);
-            item.RemoveItem(item2);
-            actualResult = item[1];
-            //Assert
-            Assert.AreEqual(expectedResult, actualResult);
-        }
+        //[TestMethod]
+        //public void Remove_all()
+        //{
+        //    //Arrange
+        //    CustomList<int> item = new CustomList<int>();
+        //    int item1 = 11;
+        //    int item2 = 15;
+        //    int item3 = 20;
+        //    int expectedResult = 20;
+        //    int actualResult;
+        //    //Act
+        //    item.AddMyItem(item1);
+        //    item.AddMyItem(item2);
+        //    item.AddMyItem(item3);
+        //    item.RemoveItem(item2);
+        //    actualResult = item[1];
+        //    //Assert
+        //    Assert.AreEqual(expectedResult, actualResult);
+        //}
 
     }
 }

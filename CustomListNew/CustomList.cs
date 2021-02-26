@@ -71,11 +71,14 @@ namespace CustomListNew
         }
         public void RemoveItem(T myItems)
         {
-            AddMyItem(myItems);
-            T[] temp = new T[count];
-            for (int i = 0; i < count; i++)
+            if (count > capacity)
             {
-                temp[i] = _items[i];
+                AddMyItem(myItems);
+                T[] temp = new T[count];
+                for (int i = 0; i < count; i++)
+                {
+                    temp[i] = _items[i];
+                }
             }
             _items[count] = myItems;
             count--;
