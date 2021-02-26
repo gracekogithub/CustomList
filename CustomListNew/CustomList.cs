@@ -56,46 +56,38 @@ namespace CustomListNew
         }
         public void AddMyItem (T itemAdded)
         {
-          
             if (count == capacity)
             {
                 capacity *= 2;
-
-                //Array.Resize<T>(ref _items, _items.Length); or like the following
                 T[] moreItems = new T[capacity];
-                //create logic to take the place of Array.copy
                 for (int i = 0; i < count; i++)
                 {
                     moreItems[i] = _items[i];
                 }
-               
-
                 _items = moreItems;
-                
             }
             _items[count] = itemAdded;
             count++;
         }
-        //public void RemoveItem ()
-        //{
-        //    int position;
-        //    for (int i = 0; i < _items.Length; i++)
-        //    {
-        //        if (position)
-        //        {
-
-        //        }
-        //    }
-        //}
-
-        ////Don't Remove, but create new collection without item being removed
-        //public void ReadFile()
-        //{
-        //    string path = @"Mac\Home\Desktop\DevCode\CustomListNew\TestFile.txt";
-        //    if (!File.Exists(path))
-        //    {
-        //        Console.WriteLine("Error: File does not exist");
-        //    }
-        //}
+        public void RemoveItem(T myItems)
+        {
+            AddMyItem(myItems);
+            T[] temp = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                temp[i] = _items[i];
+            }
+            _items[count] = myItems;
+            count--;
+        }
+        //Don't Remove, but create new collection without item being removed
+        public void ReadFile()
+        {
+            string path = @"Mac\Home\Desktop\DevCode\CustomListNew\TestFile.txt";
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("Error: File does not exist");
+            }
+        }
     }
 }
